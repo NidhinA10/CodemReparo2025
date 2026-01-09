@@ -16,7 +16,12 @@ const Register: React.FC = () => {
     setLoading(true);
     setError(null);
     setSuccessMsg(null);
-
+    if (!email.includes('.')) {
+      alert("Invalid Email");
+      setError("Invalid Email");
+      navigate('/login');
+      return;
+    }
     const { error } = await signUp(email, password);
 
     if (error) {
@@ -62,7 +67,9 @@ const Register: React.FC = () => {
             <input
               type="email"
               value={email}
-              onChange={(e) => setEmail(e.target.value)}
+              onChange={(e) => {
+                setEmail(e.target.value)
+              }}
               className="w-full bg-zinc-900 border border-zinc-700 rounded-lg px-4 py-3 text-white focus:outline-none focus:ring-2 focus:ring-teal-500 focus:border-transparent transition-all"
               placeholder="you@example.com"
               required
