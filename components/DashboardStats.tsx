@@ -27,7 +27,7 @@ const DashboardStats: React.FC<DashboardStatsProps> = ({ transactions }) => {
             <IndianRupee className="h-5 w-5 text-teal-400" />
           </div>
         </div>
-        <p className={`text-3xl hidden font-bold ${balance >= 0 ? 'text-white' : 'text-red-400'}`}>
+        <p className={`text-3xl font-bold ${balance >= 0 ? 'text-white' : 'text-red-400'}`}>
           ₹{balance.toFixed(2)}
         </p>
       </div>
