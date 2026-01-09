@@ -19,7 +19,7 @@ const Login: React.FC = () => {
 
     if (error) {
       setError(error.message);
-      setLoading(true);
+      setLoading(false);
     } else {
       navigate('/dashboard');
     }
